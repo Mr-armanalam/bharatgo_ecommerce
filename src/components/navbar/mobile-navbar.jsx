@@ -12,13 +12,11 @@ const MobileNavbar = ({ categories, filterProducts, currentActiveCat }) => {
         className="cursor-pointer"
       />
       {isMobileNavOpen && (
-        <div className="flex flex-col bg-gray-900 z-50 text-white text-sm p-4 -top-9 rounded-l-lg w-50 h-screen -right-4 absolute gap-y-0.5">
+        <div className="flex w-[250px] h-screen fixed flex-col bg-gray-900 z-50 text-white text-sm p-4 top-0 rounded-l-lg right-0 gap-y-0.5">
           <RxCross2
-            onClick={() =>
-              setIsMobileNavOpen(false)
-            }
+            onClick={() => setIsMobileNavOpen(false)}
             size={19}
-            className="ml-auto cursor-pointer"
+            className="ml-auto  cursor-pointer"
           />
           {categories.map((cat) => (
             <p
