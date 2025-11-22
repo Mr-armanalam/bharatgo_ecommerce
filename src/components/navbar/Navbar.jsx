@@ -20,7 +20,7 @@ export default function Navbar({ search, onSearch, cartCount, onCartOpen }) {
   useEffect(() => {
     async function loadCategories() {
       const data = await fetchCategories();
-      setCategories(["All", ...data.map((c) => c.name)]);
+      setCategories(["All", ...data.slice(0,5).map((c) => c.name)]);
     }
 
     loadCategories();

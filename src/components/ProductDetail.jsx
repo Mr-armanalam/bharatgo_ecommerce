@@ -1,11 +1,10 @@
 import React from "react";
+import { RxCross2 } from "react-icons/rx";
 
 export default function ProductDetail({ product, onClose, onAdd }) {
   return (
-    <div className="fixed right-0 top-0 w-80 h-full bg-white shadow-lg p-4 overflow-auto">
-      <button className="text-right w-full" onClick={onClose}>
-        X
-      </button>
+    <div className="fixed right-0 top-0 w-[400px] h-full bg-white shadow-lg py-4 px-6 cursor-pointer overflow-auto">
+      <RxCross2 className="ml-auto mb-4" onClick={onClose} />
       <img
         src={product.images[0]}
         className="w-full h-64 object-cover rounded"

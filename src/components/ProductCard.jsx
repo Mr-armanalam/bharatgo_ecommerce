@@ -10,7 +10,7 @@ export default function ProductCard({ product, onAdd, onOpenDetail }) {
       />
 
       <div
-        className="absolute top-2 right-2 bg-white rounded-full p-2 shadow"
+        className="absolute top-2 right-2 bg-white rounded-full text-lg pb-0.5 border border-gray-400 flex items-center justify-center h-7 w-7 shadow"
         onClick={onAdd}
       >
         +
