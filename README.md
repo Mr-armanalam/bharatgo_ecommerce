@@ -13,10 +13,8 @@ A fully responsive **E-Commerce Web Application** built as part of an assignment
 
 ## Screenshots
 
-### Homepage / 
-![Homepage Screenshot](./assets/home_page.png)
-
----
+### Homepage
+<img width="2844" height="1529" alt="image" src="https://github.com/user-attachments/assets/fc52e2db-0392-4458-852f-56fac9d996e1" />
 
 ##  Features
 
