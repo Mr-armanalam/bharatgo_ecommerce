@@ -6,8 +6,8 @@ A fully responsive **E-Commerce Web Application** built as part of an assignment
 
 ## Live Demo
 
- **Deployed Link:** [https://demo-ecommerce-app.vercel.app](https://bharatgo-ecommerce-two.vercel.app/)  
- **GitHub Repository:** [https://github.com/demo-user/ecommerce-app](https://github.com/Mr-armanalam/bharatgo_ecommerce)  
+ **Deployed Link:** [https://bharatgo-ecommerce-two.vercel.app/](https://bharatgo-ecommerce-two.vercel.app/)  
+ **GitHub Repository:** [https://github.com/Mr-armanalam/bharatgo_ecommerce](https://github.com/Mr-armanalam/bharatgo_ecommerce)  
 
 ---
 
