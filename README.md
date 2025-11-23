@@ -1,16 +1,71 @@
-# React + Vite
+# Bharatgo_ecommerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive **E-Commerce Web Application** built as part of an assignment. 
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo
 
-## React Compiler
+ **Deployed Link:** [https://bharatgo-ecommerce-two.vercel.app/](https://bharatgo-ecommerce-two.vercel.app/)  
+ **GitHub Repository:** [https://github.com/Mr-armanalam/bharatgo_ecommerce](https://github.com/Mr-armanalam/bharatgo_ecommerce)  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Homepage
+<img width="2844" height="1529" alt="image" src="https://github.com/user-attachments/assets/fc52e2db-0392-4458-852f-56fac9d996e1" />
+
+##  Features
+
+### Product Features
+- Product listing page  
+- Product details section  
+- Real-time search  
+- Category-wise filtering
+
+### Cart Features
+- Add to cart  
+- Remove from cart  
+- Update item quantity   
+- Total price auto-updated
+
+### UI & UX Features
+- Fully responsive layout  
+- Modern product card design
+- Clean and simple UI
+---
+
+## Tech Stack
+
+| Area | Technology |
+|------|------------|
+| Frontend | React + Vite |
+| Styling | Tailwind CSS |
+| State Management | Context API |
+| API | Platzi FakeStore API |
+| Deployment | Vercel |
+| Icons | React Icons |
+
+---
+
+## Installation & Usage
+
+```bash
+# Clone the repository
+git clone https://github.com/Mr-armanalam/bharatgo_ecommerce
+
+# Navigate to project directory
+cd bharatgo_ecommerce
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+```
+
+` Submitted by - Arman Alam `
+` armanalam78578@gmail.com `
+
