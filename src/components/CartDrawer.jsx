@@ -1,13 +1,33 @@
 import React from "react";
 import { RxCross2 } from "react-icons/rx";
 
-export default function CartDrawer({
-  cart,
-  onClose,
-  onIncrement,
-  onDecrement,
-  onRemove,
-}) {
+export default function CartDrawer({ cart, onClose, setCart }) {
+
+  function onIncrement(id) {
+    setCart(
+      cart.map((cart_item) =>
+        cart_item.id === id
+          ? { ...cart_item, qty: cart_item.qty + 1 }
+          : cart_item
+      )
+    );
+  }
+
+  function onDecrement(id) {
+    setCart(
+      cart.map((cart_item) =>
+        cart_item.id === id && cart_item.qty > 1
+          ? { ...cart_item, qty: cart_item.qty - 1 }
+          : cart_item
+      )
+    );
+  }
+
+   function removeFromCart(id) {
+    setCart(cart.filter((cart_item) => cart_item.id !== id));
+  }
+
+
   const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
 
   return (
@@ -44,7 +64,7 @@ export default function CartDrawer({
 
           <button
             className="absolute border rounded-full pl-px cursor-pointer h-4 w-4 top-0 right-0"
-            onClick={() => onRemove(i.id)}
+            onClick={() => removeFromCart(i.id)}
           >
             <RxCross2 size={12} />
           </button>

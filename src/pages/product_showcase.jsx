@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import ProductDetail from "../components/ProductDetail";
 import ProductCard from "../components/ProductCard";
 import CartDrawer from "../components/CartDrawer";
+import { useProducts } from "../hooks/useProducts";
 
-const Home_page = ({ filtered_item, setCartOpen, cartOpen, setCart, cart }) => {
+const ProductShowcase = ({ setCartOpen, cartOpen, setCart, cart }) => {
   const [detailProduct, setDetailProduct] = useState(null);
 
   function addToCart(product) {
@@ -21,30 +22,7 @@ const Home_page = ({ filtered_item, setCartOpen, cartOpen, setCart, cart }) => {
     }
   }
 
-  function increment(id) {
-    setCart(
-      cart.map((cart_item) =>
-        cart_item.id === id
-          ? { ...cart_item, qty: cart_item.qty + 1 }
-          : cart_item
-      )
-    );
-  }
-
-  function decrement(id) {
-    setCart(
-      cart.map((cart_item) =>
-        cart_item.id === id && cart_item.qty > 1
-          ? { ...cart_item, qty: cart_item.qty - 1 }
-          : cart_item
-      )
-    );
-  }
-
-  function removeFromCart(id) {
-    setCart(cart.filter((cart_item) => cart_item.id !== id));
-  }
-
+  const { filtered: filtered_item } = useProducts();
 
   return (
     <>
@@ -69,13 +47,11 @@ const Home_page = ({ filtered_item, setCartOpen, cartOpen, setCart, cart }) => {
         <CartDrawer
           cart={cart}
           onClose={() => setCartOpen(false)}
-          onIncrement={increment}
-          onDecrement={decrement}
-          onRemove={removeFromCart}
+          setCart={setCart}
         />
       )}
     </>
   );
 };
 
-export default Home_page;
+export default ProductShowcase;

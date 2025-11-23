@@ -1,20 +1,22 @@
+import { FaCartShopping } from "react-icons/fa6";
+import MobileNavbar from "./mobile-navbar";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { fetchCategories } from "../../utils/api";
-import { FaCartShopping } from "react-icons/fa6";
-import MobileNavbar from "./mobile-navbar";
+import { useProducts } from "../../hooks/useProducts";
 
-export default function Navbar({ search, onSearch, cartCount, onCartOpen }) {
+export default function Navbar({ cartCount, onCartOpen }) {
+
+  const { search, searchProducts } = useProducts();
   const [categories, setCategories] = useState([]);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const currentActiveCat = searchParams.get("category");
-  console.log(searchParams.get("category"));
 
   function filterProducts(cat) {
-    const newParams = new URLSearchParams();
-    newParams.set("category", cat);
-    setSearchParams(newParams);
+    const params = new URLSearchParams();
+    params.set("category", cat);
+    setSearchParams(params); 
   }
 
   useEffect(() => {
@@ -22,9 +24,9 @@ export default function Navbar({ search, onSearch, cartCount, onCartOpen }) {
       const data = await fetchCategories();
       setCategories(["All", ...data.slice(0, 5).map((c) => c.name)]);
     }
-
     loadCategories();
   }, []);
+
   return (
     <div className="flex justify-between items-center py-4">
       <h1 className="text-2xl max-sm:text-lg font-bold">E commerce</h1>
@@ -45,13 +47,17 @@ export default function Navbar({ search, onSearch, cartCount, onCartOpen }) {
 
       <input
         value={search}
-        onChange={(e) => onSearch(e.target.value)}
+        onChange={(e) => searchProducts(e.target.value)}
         className="border rounded px-3 py-1 max-sm:text-sm"
         placeholder="Search a product"
       />
 
       <div className="relative flex items-center">
-        <FaCartShopping className="cursor-pointer" onClick={onCartOpen} size={19} />
+        <FaCartShopping
+          className="cursor-pointer"
+          onClick={onCartOpen}
+          size={19}
+        />
         <span className="absolute -right-3 -top-3 bg-red-600 px-0.5 text-white rounded-full w-fit h-fit text-xs">
           {cartCount}
         </span>
