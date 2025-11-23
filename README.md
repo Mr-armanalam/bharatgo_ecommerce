@@ -42,8 +42,8 @@ A fully responsive **E-Commerce Web Application** built as part of an assignment
 |------|------------|
 | Frontend | React + Vite |
 | Styling | Tailwind CSS |
-| State Management | Context API / Redux Toolkit |
-| API | FakeStore API |
+| State Management | Context API |
+| API | Platzi FakeStore API |
 | Deployment | Vercel |
 | Icons | React Icons |
 
