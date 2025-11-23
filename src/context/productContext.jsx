@@ -7,12 +7,14 @@ export function ProductsProvider({ children }) {
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category");
 
   useEffect(() => {
     async function loadProducts() {
+      setLoading(true);
       const data = await fetchProducts();
       setProducts(data);
 
@@ -21,6 +23,7 @@ export function ProductsProvider({ children }) {
       } else {
         setFiltered(data.filter((p) => p.category.name === category));
       }
+      setLoading(false);
     }
 
     loadProducts();
@@ -41,6 +44,7 @@ export function ProductsProvider({ children }) {
         filtered,
         search,
         searchProducts,
+        loading
       }}
     >
       {children}

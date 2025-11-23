@@ -3,6 +3,7 @@ import ProductDetail from "../components/ProductDetail";
 import ProductCard from "../components/ProductCard";
 import CartDrawer from "../components/CartDrawer";
 import { useProducts } from "../hooks/useProducts";
+import ProductsLoader from "../components/ProductLoader";
 
 const ProductShowcase = ({ setCartOpen, cartOpen, setCart, cart }) => {
   const [detailProduct, setDetailProduct] = useState(null);
@@ -22,7 +23,9 @@ const ProductShowcase = ({ setCartOpen, cartOpen, setCart, cart }) => {
     }
   }
 
-  const { filtered: filtered_item } = useProducts();
+  const { filtered: filtered_item, loading } = useProducts();
+
+  if (loading) return <ProductsLoader />;
 
   return (
     <>
