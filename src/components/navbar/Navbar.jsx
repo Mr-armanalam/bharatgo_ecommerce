@@ -29,7 +29,7 @@ export default function Navbar({ cartCount, onCartOpen }) {
 
   return (
     <div className="flex justify-between items-center py-4">
-      <h1 className="text-2xl max-sm:text-lg font-bold">E commerce</h1>
+      <h1 className="text-2xl max-sm:text-lg font-bold">E-Commerce</h1>
 
       <div className="flex gap-4 max-md:hidden">
         {categories.map((cat) => (
