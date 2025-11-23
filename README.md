@@ -64,5 +64,8 @@ npm install
 # Start development server
 npm run dev
 
+```
 
+` Submitted by - Arman Alam `
+` armanalam78578@gmail.com `
 
