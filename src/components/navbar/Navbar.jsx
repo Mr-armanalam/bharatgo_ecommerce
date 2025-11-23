@@ -20,7 +20,7 @@ export default function Navbar({ search, onSearch, cartCount, onCartOpen }) {
   useEffect(() => {
     async function loadCategories() {
       const data = await fetchCategories();
-      setCategories(["All", ...data.slice(0,5).map((c) => c.name)]);
+      setCategories(["All", ...data.slice(0, 5).map((c) => c.name)]);
     }
 
     loadCategories();
@@ -29,7 +29,7 @@ export default function Navbar({ search, onSearch, cartCount, onCartOpen }) {
     <div className="flex justify-between items-center py-4">
       <h1 className="text-2xl max-sm:text-lg font-bold">E commerce</h1>
 
-      <div className="flex gap-4 max-sm:hidden">
+      <div className="flex gap-4 max-md:hidden">
         {categories.map((cat) => (
           <p
             key={cat}
@@ -51,9 +51,7 @@ export default function Navbar({ search, onSearch, cartCount, onCartOpen }) {
       />
 
       <div className="relative flex items-center">
-        <button onClick={onCartOpen}>
-          <FaCartShopping size={19} />
-        </button>
+        <FaCartShopping className="cursor-pointer" onClick={onCartOpen} size={19} />
         <span className="absolute -right-3 -top-3 bg-red-600 px-0.5 text-white rounded-full w-fit h-fit text-xs">
           {cartCount}
         </span>

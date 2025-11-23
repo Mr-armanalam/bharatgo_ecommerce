@@ -5,7 +5,7 @@ import { RxCross2 } from "react-icons/rx";
 const MobileNavbar = ({ categories, filterProducts, currentActiveCat }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   return (
-    <div className="sm:hidden h-full relative">
+    <div className="md:hidden h-full relative">
       <FaBars
         size={19}
         onClick={() => setIsMobileNavOpen(true)}
